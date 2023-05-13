@@ -1,7 +1,8 @@
 {% macro page_info(page) %}
     <div class="article-info">
+        <div> {{ page.reading_time }} minutes de lecture</div>
         {% if page.date %}
-        <div class="article-date">{{ page.date | date(format=config.extra.anpu_date_format) }}</div>
+        <div class="article-date">{{ page.date | date(format=config.extra.anpu_date_format, locale = "fr_FR") }}</div>
         {% endif %}
         <div class="article-taxonomies">
             {% if page.taxonomies.categories %}
@@ -29,14 +30,18 @@
                 <a href="{{ page.permalink }}">{{ page.title }}</a>
             </h1>
         </header>
-
-        {% if page.summary %}
-        <div class="content post-summary">
-            {{ page.summary | markdown | safe }}
-        </div>
-        {% endif %}
         
         {{ self::page_info(page=page) }}
+
+        <div class="content post-summary">
+        {% if page.summary %}
+            {{ page.summary | markdown | safe }}
+                {% else %}
+            {{ page.content | striptags | truncate(length=280) | safe }}
+        {% endif %}
+        </div>
+
+        <div class="read-more"><a href="{{ page.permalink }}">Lire</a></div>
     </article>
 {% endmacro page_listing %}
 

@@ -222,7 +222,7 @@ main h1 {
 
 article:not(:last-of-type) {
     border-bottom: thin solid #f1f1f1;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 article header h1 {
@@ -241,7 +241,7 @@ article header h1 a {
 .article-info {
     font-size: 0.75em;
     color: grey;
-    margin-top: 1em;
+    margin-top: 0.3em;
 }
 
 .article-info a {
@@ -273,7 +273,7 @@ article header h1 a {
 
 .article-categories li {
     display: inline;
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 
 .article-tags {
@@ -285,7 +285,7 @@ article header h1 a {
 
 .article-tags li {
     display: inline;
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 
 article img {
@@ -296,7 +296,8 @@ article img {
 }
 
 .read-more {
-    font-size: 0.85em;
+    font-size: 0.75em;
+    margin: 0.5em 0 0 0
 }
 
 .divider {
@@ -324,6 +325,34 @@ article img {
     line-height: 2em;
 }
 
+.warning, .information, .important {
+	min-height: 48px;
+	max-width : 40em;
+	width: 90%;
+	display: block;
+	margin: 1.5em auto 1.5em auto;
+	padding: 0 6px 0px 36px;
+	text-indent: 0em;
+}
+
+.warning {
+	background: #FFE2E2 url(/warning.png) 2px 3px no-repeat;
+	border-top: 1px solid #FF2334;
+	border-bottom: 1px solid #FF2334;
+}
+
+.important {
+	background: #FDFDCD url(/important.png) 2px 3px no-repeat;
+	border-top: 1px solid #FFDF18;
+	border-bottom: 1px solid #FFDF18;
+}
+
+.information {
+	background: #E7F6FF url(/information.png) 2px 3px no-repeat;
+	border-top: 1px solid #0040C3;
+	border-bottom: 1px solid #0040C3;
+}
+
 /* Pagination */
 
 .pagination {
@@ -333,7 +362,7 @@ article img {
 }
 
 .pagination {
-    text-align: center;   
+    text-align: center;
 }
 
 .pagination-item {
